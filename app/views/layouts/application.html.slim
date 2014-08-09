@@ -6,11 +6,10 @@ head
 	= csrf_meta_tags
 
 body
-	.container
-		== render 'layouts/header'
+
+	== render 'layouts/header'
 
 	.container
 		== yield
 
-	.container
-		== render 'layouts/footer'
+	== render 'layouts/footer'
