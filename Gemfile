@@ -16,6 +16,11 @@ gem 'sdoc', '~> 0.4.0',          group: :doc # bundle exec rake doc:rails genera
 gem 'spring',        group: :development # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'rails_12factor', '0.0.2', group: :production
 
+
+# For windows
+gem 'tzinfo-data'
+gem 'tzinfo'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
