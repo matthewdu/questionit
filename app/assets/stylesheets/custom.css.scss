@@ -1,5 +1,10 @@
 @import "bootstrap";
 
+//variables
+$light-grey: #eaeaea;
+$grey: #555;
+$dark-grey: #222;
+
 body {
 	padding-top: 70px;
 }
@@ -8,15 +13,15 @@ body {
 footer {
 	margin-top: 35px;
 	padding-top: 5px;
-	border-top: 1px solid #eaeaea;
+	border-top: 1px solid $light-grey;
 	small {
 		float: left;
 		font-size: 1em;
 	}
 	a {
-		color: #555;
+		color: $grey;
 		&:hover {
-			color: #222;
+			color: $dark-grey;
 		}
 	}
 	ul {
