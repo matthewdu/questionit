@@ -10,7 +10,7 @@ body
 	== render 'layouts/header'
 
 	- flash.each do |key, value|
-		.alert.alert=key =value
+		div class="alert alert-#{key}" = value
 
 	.container
 		== yield
