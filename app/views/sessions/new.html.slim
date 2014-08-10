@@ -1,0 +1,17 @@
+- provide(:title, "Login")
+h1.center Log in
+= form_for(:session, url: sessions_path) do |f|
+  .form-group
+    = f.label :username
+    = f.text_field :username, class: 'form-control', placeholder: 'Username'
+
+  .form-group
+    = f.label :password
+    = f.password_field :password, class: 'form-control', placeholder: 'Password'
+
+  = f.submit 'Sign in', class: 'btn btn-primary btn-lg'
+br
+p 
+  |
+    New user? 
+  = link_to 'Sign up now!', signup_path
