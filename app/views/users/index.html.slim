@@ -1,7 +1,8 @@
 - provide(:title, "Userlist")
 h1 All Users
 
-= will_paginate
+= will_paginate renderer: BootstrapPagination::Rails
+
 - @users.each do |user|
 	li
 		=> user.id

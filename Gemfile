@@ -13,7 +13,7 @@ gem 'slim' # Slim for html template
 gem 'bootstrap-sass' # CSS
 gem 'faker' # To generate Sample Data
 gem 'will_paginate' # Pagination gem #1
-gem 'bootstrap-will_paginate' # Pagination gem #2
+gem 'will_paginate-bootstrap' # Pagination gem #2
 
 gem 'sdoc', '~> 0.4.0',          group: :doc # bundle exec rake doc:rails generates the API under doc/api.
 gem 'spring',        group: :development # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
