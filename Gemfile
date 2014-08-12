@@ -19,6 +19,11 @@ gem 'sdoc', '~> 0.4.0',          group: :doc # bundle exec rake doc:rails genera
 gem 'spring',        group: :development # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'rails_12factor', '0.0.2', group: :production
 
+# Debugging. Simple Tutorial: http://www.sitepoint.com/pry-friends-rails/
+group :development do
+	gem "better_errors"
+	gem "jazz_hands"
+end
 
 # For windows
 gem 'tzinfo-data'
@@ -32,7 +37,3 @@ gem 'tzinfo'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
