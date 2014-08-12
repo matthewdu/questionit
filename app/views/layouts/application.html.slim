@@ -10,9 +10,12 @@ body
 	== render 'layouts/header'
 
 	- flash.each do |key, value|
-		div class="alert alert-#{key}" = value
+		div class="container alert alert-#{key}" = value
 
 	.container
 		== yield
 
 	== render 'layouts/footer'
+
+	.container
+		== debug(params) if Rails.env.development?
