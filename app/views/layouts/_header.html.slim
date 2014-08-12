@@ -4,12 +4,13 @@ header
 			.navbar-header
 				= link_to 'QuestionIt', root_path, class: "navbar-brand"
 			ul.nav.navbar-nav.navbar-right
+				/ Menu items that are there regardless of whether you are signed in or not
+				li = link_to 'Home', root_path
+				li = link_to 'About', about_path
+				li = link_to 'Users', users_path
 				- if signed_in?
-					li = link_to 'Users', '#'
 					li = link_to 'Profile', current_user
-					li = link_to 'Settings', '#'
+					li = link_to 'Settings', edit_user_path(current_user)
 					li = link_to 'Sign Out', signout_path, method: "delete"
 				- else
-					li = link_to 'Home', root_path
-					li = link_to 'About', about_path
 					li = link_to 'Sign in', signin_path

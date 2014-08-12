@@ -11,11 +11,19 @@ gem 'jbuilder', '~> 2.0' # Build JSON APIs with ease. Read more: https://github.
 gem 'bcrypt' # Bcrypt for password
 gem 'slim' # Slim for html template
 gem 'bootstrap-sass' # CSS
+gem 'faker' # To generate Sample Data
+gem 'will_paginate' # Pagination gem #1
+gem 'will_paginate-bootstrap' # Pagination gem #2
 
 gem 'sdoc', '~> 0.4.0',          group: :doc # bundle exec rake doc:rails generates the API under doc/api.
 gem 'spring',        group: :development # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'rails_12factor', '0.0.2', group: :production
 
+# Debugging. Simple Tutorial: http://www.sitepoint.com/pry-friends-rails/
+group :development do
+	gem "better_errors"
+	gem "jazz_hands"
+end
 
 # For windows
 gem 'tzinfo-data'
@@ -29,7 +37,3 @@ gem 'tzinfo'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-

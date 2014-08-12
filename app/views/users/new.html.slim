@@ -3,19 +3,19 @@ h1.center Sign up
 = form_for @user do |f|
 	= render 'shared/error_messages', object: f.object
 
-	div class="form-group"
+	.form-group
 		= f.label :username, class: 'control-label'
 		= f.text_field :username, class: 'form-control', placeholder: 'Username'
 
-	div class="form-group"
+	.form-group
 		= f.label :name, class: 'control-label'
 		= f.text_field :name, class: 'form-control', placeholder: 'Display Name'
 
-	div class="form-group"
+	.form-group
 		= f.label :password, class: 'control-label'
 		= f.password_field :password, class: 'form-control', placeholder: 'Password'
 
-	div class="form-group"
+	.form-group
 		= f.label :password_confirmation, 'Confirmation', class: 'control-label'
 		= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm password'
 
