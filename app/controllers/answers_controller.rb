@@ -1,8 +1,17 @@
 class AnswersController < ApplicationController
 	def new
+		@answer = Answer.new
 	end
 
 	def create
+		@user = current_user
+		@answer = @user.answers.new(answer_params)
+		if @answer.save
+			flash[:success] = "Answer \'#{answer_params[:title]}\' successfully posted!"
+			redirect_to @answer
+		else
+			render 'new'
+		end
 	end
 
 	def update
@@ -16,4 +25,9 @@ class AnswersController < ApplicationController
 
 	def destroy
 	end
+
+	private
+		def answer_params
+			params.require(:answer).permit(:title, :post)
+		end
 end
