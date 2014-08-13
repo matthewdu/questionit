@@ -1,4 +1,14 @@
 - provide(:title, @user.username)
-= @user.username
-br
-= @user.name
+h1
+	=> @user.username 
+	small = @user.name
+hr
+
+h3 My Answers
+ul.list-group
+- @user.answers.each do |answer|
+	li.list-group-item
+		span.badge = answer.points
+		strong = answer.title
+		br
+		= answer.post
