@@ -1,0 +1,13 @@
+- provide(:title, 'New Answer')
+h1 New Answer
+= form_for @answer do |f|
+	
+	div.form-group
+		= f.label :title, class: 'control-label'
+		= f.text_field :title, class: 'form-control', placeholder: 'Title'
+
+	div.form-group
+		= f.label :post, class: 'control-label'
+		= f.text_area :post, class: 'form-control', placeholder: 'Enter answer', rows: '3'
+
+	= f.submit 'Post Answer', class: 'btn btn-primary btn-lg'

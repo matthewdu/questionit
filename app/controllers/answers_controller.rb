@@ -18,9 +18,11 @@ class AnswersController < ApplicationController
 	end
 
 	def index
+		@answers = Answer.paginate(page: params[:page])
 	end
 
 	def show
+		@answer = Answer.find(params[:id])
 	end
 
 	def destroy

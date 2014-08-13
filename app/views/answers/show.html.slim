@@ -1,0 +1,14 @@
+- provide(:title, @answer.title)
+
+.panel.panel-default
+	.panel-heading
+		h3.panel-title = @answer.title
+		/span.badge = @answer.points
+	.panel-body
+		= @answer.post
+	.panel-footer
+		| Posted by 
+		= @answer.user.name
+		| (
+		= @answer.user.username
+		| )
