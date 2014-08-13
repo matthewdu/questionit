@@ -16,5 +16,17 @@ namespace :db do
                    password_confirmation: password)
       puts "#{name} added with username: #{username}"
     end
+
+    (1..100).each do |n|
+        5.times do |m|
+        title = Faker::Lorem.sentence(6)
+        post = Faker::Lorem.paragraph
+        user_id = n
+        Answer.create!(title: title,
+                       post: post,
+                       user_id: user_id)
+        puts "user #{user_id} posted: #{title}"
+      end
+    end
   end
 end
