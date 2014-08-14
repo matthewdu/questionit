@@ -7,8 +7,8 @@ namespace :db do
                  password_confirmation: "foobar",
                  admin: true)
     99.times do |n|
-      username  = Faker::Name.name
-      name = Faker::Internet.user_name
+      username  = Faker::Internet.user_name
+      name = Faker::Name.name
       password  = "password"
       User.create!(username: username,
                    name: name,
