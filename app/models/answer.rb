@@ -5,6 +5,6 @@ class Answer < ActiveRecord::Base
 	before_save { self.points = 1 }
 
 	validates :title, presence: true, length: { maximum: 255 }
-	validates :post, presence: true
+	validates :content, presence: true
 
 end

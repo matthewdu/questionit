@@ -10,9 +10,9 @@ ul.list-group
 	li.list-group-item
 		span.badge = answer.points
 		h4 => link_to answer.title, answer_path(answer)
-		= answer.post
+		= answer.content
 		- if current_user.admin? || current_user?(@user)
 			br
 			.btn-group
-				= link_to '<button class="btn btn-success btn-xs">Edit</button>'.html_safe, answer_path(answer), method: :patch
+				= link_to '<button class="btn btn-success btn-xs">Edit</button>'.html_safe, edit_answer_path(answer)
 				= link_to '<button class="btn btn-danger btn-xs">Delete</button>'.html_safe, answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }

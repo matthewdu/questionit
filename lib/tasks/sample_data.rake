@@ -6,7 +6,7 @@ namespace :db do
                  password: "foobar",
                  password_confirmation: "foobar",
                  admin: true)
-    99.times do |n|
+    (2..100).each do |n|
       username  = Faker::Internet.user_name
       name = Faker::Name.name
       password  = "password"
@@ -14,16 +14,16 @@ namespace :db do
                    name: name,
                    password: password,
                    password_confirmation: password)
-      puts "#{name} added with username: #{username}"
+      puts "#{n}: #{name} added with username: #{username}"
     end
 
     (1..100).each do |n|
         5.times do |m|
         title = Faker::Lorem.sentence(6)
-        post = Faker::Lorem.paragraph
+        content = Faker::Lorem.paragraph
         user_id = n
         Answer.create!(title: title,
-                       post: post,
+                       content: content,
                        user_id: user_id)
         puts "user #{user_id} posted: #{title}"
       end
