@@ -1,7 +1,7 @@
 - provide(:title, @user.username)
 h1
-	=> @user.username 
-	small = @user.name
+	=> @user.name
+	small = @user.username
 hr
 
 h3 My Answers
@@ -9,6 +9,10 @@ ul.list-group
 - @user.answers.each do |answer|
 	li.list-group-item
 		span.badge = answer.points
-		strong = answer.title
-		br
+		h4 => link_to answer.title, answer_path(answer)
 		= answer.post
+		- if current_user.admin? || current_user?(@user)
+			br
+			.btn-group
+				= link_to '<button class="btn btn-success btn-xs">Edit</button>'.html_safe, answer_path(answer), method: :patch
+				= link_to '<button class="btn btn-danger btn-xs">Delete</button>'.html_safe, answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }
