@@ -21,11 +21,10 @@ namespace :db do
         5.times do |m|
         title = Faker::Lorem.sentence(6)
         content = Faker::Lorem.paragraph
-        user_id = n
         Answer.create!(title: title,
                        content: content,
-                       user_id: user_id)
-        puts "user #{user_id} posted: #{title}"
+                       user_id: n)
+        puts "user #{n} posted: #{title}"
       end
     end
   end
