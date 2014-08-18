@@ -2,6 +2,7 @@
 h1.center Answers
 
 = will_paginate renderer: BootstrapPagination::Rails
+= link_to 'New Answer', new_answer_path, class: 'btn btn-primary new-answer-btn'
 
 ul.list-group
 	- @answers.each do |answer|
