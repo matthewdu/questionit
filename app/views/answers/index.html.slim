@@ -12,7 +12,7 @@ ul.list-group
 			- if current_user.admin?
 				br
 				.btn-group
-					= link_to '<button class="btn btn-success btn-xs">Edit</button>'.html_safe, edit_answer_path(answer)
-					= link_to '<button class="btn btn-danger btn-xs">Delete</button>'.html_safe, answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }
+					= link_to 'Edit', edit_answer_path(answer), class: 'btn btn-success btn-xs'
+					= link_to 'Delete', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'
 
 = will_paginate renderer: BootstrapPagination::Rails
