@@ -1,4 +1,18 @@
 - provide(:title, @user.username)
-= @user.username
-br
-= @user.name
+h1
+	=> @user.name
+	small = @user.username
+hr
+
+h3 My Answers
+ul.list-group
+- @user.answers.each do |answer|
+	li.list-group-item
+		span.badge = answer.points
+		h4 => link_to answer.title, answer_path(answer)
+		= answer.content
+		- if current_user.admin? || current_user?(@user)
+			br
+			.btn-group
+				= link_to 'Edit', edit_answer_path(answer), class: 'btn btn-success btn-xs'
+				= link_to 'Delete', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'

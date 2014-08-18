@@ -1,0 +1,19 @@
+- provide(:title, 'Answers')
+h1.center Answers
+
+= will_paginate renderer: BootstrapPagination::Rails
+= link_to 'New Answer', new_answer_path, class: 'btn btn-primary new-answer-btn'
+
+ul.list-group
+	- @answers.each do |answer|
+		li.list-group-item
+			span.badge = answer.points
+			h4 => link_to answer.title, answer_path(answer)
+			= answer.content
+			- if current_user.admin?
+				br
+				.btn-group
+					= link_to 'Edit', edit_answer_path(answer), class: 'btn btn-success btn-xs'
+					= link_to 'Delete', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'
+
+= will_paginate renderer: BootstrapPagination::Rails

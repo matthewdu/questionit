@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+	# associations
+	has_many :answers
 
 	# Save a downcased version of the username for login
 	before_save { self.username = username.downcase }

@@ -1,0 +1,38 @@
+- provide(:title, @answer.title)
+
+h3 = @answer.title
+hr
+
+.row
+	.col-md-10
+		.col-xs-1
+			p.text-justify add vote button here
+		.col-xs-11
+			= @answer.content
+			.text-right
+				| Posted by 
+				= @answer.user.name
+				|  (
+				= @answer.user.username
+				| )
+	.col-md-2
+		= @answer.created_at.strftime("answered %F")
+hr
+
+.col-md-10
+	/TEMPLATE DO NOT DELETE
+	/.row
+	/	.col-xs-1
+	/		p.text-justify add vote button here
+	/	.col-xs-11
+	/		= @answer.questions.content
+	/		.text-right
+	/			| Posted by 
+	/			= @answer.question.user.name
+	/			|  (
+	/			= @answer.question.user.username
+	/			| )
+	/hr
+
+.col-md-2
+	h3 similar
