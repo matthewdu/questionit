@@ -10,7 +10,7 @@ ul.list-group
 			span.badge = answer.points
 			h4 => link_to answer.title, answer_path(answer)
 			= answer.content
-			- if current_user.admin?
+			- if !(current_user.nil?) && current_user.admin?
 				br
 				.btn-group
 					= link_to 'Edit', edit_answer_path(answer), class: 'btn btn-success btn-xs'
