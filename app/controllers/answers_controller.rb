@@ -1,4 +1,6 @@
 class AnswersController < ApplicationController
+	before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
+
 	def new
 		@answer = Answer.new
 	end
