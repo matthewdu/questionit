@@ -13,7 +13,7 @@ hr
 				| Posted by 
 				= @answer.user.name
 				|  (
-				= @answer.user.username
+				= link_to @answer.user.username, user_path(@answer.user)
 				| )
 	.col-md-2
 		= @answer.created_at.strftime("answered %F")
