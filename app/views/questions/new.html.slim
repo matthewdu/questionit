@@ -1,6 +1,6 @@
 - provide(:title, 'New Question')
 h1 New Question
-= form_for @question do |f|
+= form_for [@answer, @question] do |f|
 
 	.form-group
 		= f.label :content, class: 'control-label'
