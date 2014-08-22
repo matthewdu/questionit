@@ -1,0 +1,10 @@
+- provide(:title, "Edit question")
+h1 Edit Question
+
+= form_for [@question.answer, @question] do |f|
+
+  .form-group
+    = f.label :question
+    = f.text_area :content, class: 'form-control', rows: '3'
+
+  = f.submit "Save Changes", class: "btn btn-large btn-primary"

@@ -15,25 +15,41 @@ hr
 				|  (
 				= link_to @answer.user.username, user_path(@answer.user)
 				| )
+			.text-right
+				.btn-group
+					= link_to 'Edit', edit_answer_path(@answer), class: 'btn btn-success btn-xs'
+					= link_to 'Delete', answer_path(@answer), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'
 	.col-md-2
 		= @answer.created_at.strftime("answered %F")
 hr
 
+/= link_to "Post Question", new_answer_question_path(@answer)
+
 .col-md-10
-	/TEMPLATE DO NOT DELETE
-	/.row
-	/	.col-xs-1
-	/		p.text-justify add vote button here
-	/	.col-xs-11
-	/		= @answer.questions.content
-	/		.text-right
-	/			| Posted by 
-	/			= @answer.question.user.name
-	/			|  (
-	/			= @answer.question.user.username
-	/			| )
-	/hr
+	- @answer.questions.each do |question|
+		.row
+			.col-xs-1
+				p.text-justify add vote button here
+			.col-xs-11
+				= question.content
+				.text-right
+					| Posted by 
+					= question.user.name
+					|  (
+					= link_to question.user.username, user_path(question.user)
+					| )
+				.text-right
+					.btn-group
+						= link_to 'Edit', edit_answer_question_path(answer_id: @answer.id, id: question.id), class: 'btn btn-success btn-xs'
+						= link_to 'Delete', answer_question_path(answer_id: @answer.id, id: question.id), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger btn-xs'
+		hr
+	.row
+		= form_for [@answer, Question.new] do |f|
+			.form-group
+				= f.label :'New Question', class: 'control-label'
+				= f.text_area :content, class: 'form-control', placeholder: 'Enter question', rows: '3'
+	
+			= f.submit 'Post Question', class: 'btn btn-primary btn-md'
 
 .col-md-2
 	h3 similar
-	= link_to "Post Question", new_answer_question_path(@answer)
