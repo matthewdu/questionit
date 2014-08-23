@@ -36,7 +36,7 @@ class AnswersController < ApplicationController
 	end
 
 	def show
-		@answer = Answer.find(params[:id])
+		@answer = Answer.includes(:user, questions: :user).find(params[:id])
 	end
 
 	def destroy

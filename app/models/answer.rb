@@ -1,6 +1,7 @@
 class Answer < ActiveRecord::Base
 	#associations
 	belongs_to :user
+	has_many :questions
 
 	before_save { self.points = 1 }
 
