@@ -1,9 +1,0 @@
-- provide(:title, 'New Question')
-h1 New Question
-= form_for [@answer, @question] do |f|
-
-	.form-group
-		= f.label :content, class: 'control-label'
-		= f.text_area :content, class: 'form-control', placeholder: 'Enter question', rows: '3'
-
-	= f.submit 'Post Question', class: 'btn btn-primary btn-lg'

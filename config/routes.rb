@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   match '/signout', to: 'sessions#destroy',		via: 'delete'
 
   resources :answers do
-	  resources :questions, only: [:new, :create, :edit, :update, :destroy]
+	  resources :questions, only: [:create, :edit, :update, :destroy]
 	end
 
 end

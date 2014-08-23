@@ -1,11 +1,5 @@
 class QuestionsController < ApplicationController
-	before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
-
-	def new
-		# currently not used
-		@answer = Answer.find(params[:answer_id])
-		@question = Question.new
-	end
+	before_action :signed_in_user, only: [:create, :edit, :update, :destroy]
 
 	def create
 		@answer = Answer.find(params[:answer_id])

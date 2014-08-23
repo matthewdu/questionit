@@ -23,8 +23,6 @@ hr
 		= @answer.created_at.strftime("answered %F")
 hr
 
-/= link_to "Post Question", new_answer_question_path(@answer)
-
 .col-md-10
 	- @answer.questions.each do |question|
 		.row
