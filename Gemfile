@@ -23,11 +23,11 @@ gem 'rails_12factor', '0.0.2', group: :production
 group :development do
 	gem "better_errors"
 	gem "jazz_hands"
+	
+	# For windows
+	gem 'tzinfo-data'
+	gem 'tzinfo'
 end
-
-# For windows
-gem 'tzinfo-data'
-gem 'tzinfo'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
