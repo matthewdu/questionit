@@ -1,4 +1,6 @@
 class Answer < ActiveRecord::Base
+	acts_as_votable #voting
+	
 	#associations
 	belongs_to :user
 	has_many :questions

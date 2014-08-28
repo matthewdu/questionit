@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+	acts_as_voter #voting
+
 	# associations
 	has_many :answers
 	has_many :questions
