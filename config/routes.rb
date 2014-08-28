@@ -13,4 +13,6 @@ Rails.application.routes.draw do
 	  resources :questions, only: [:create, :edit, :update, :destroy]
 	end
 
+  match '/votes/:type/:id/:vote',    to: 'votes#vote',     via: 'post',   as: 'vote'
+
 end
