@@ -6,7 +6,9 @@ hr
 .row
 	.col-md-10
 		.col-xs-1
-			p.text-justify add vote button here
+			.btn-group
+				= link_to 'like', vote_path(type: 'answer', id: @answer.id, vote: 'like'), method: :post, class: 'btn btn-success btn-xs'
+				= link_to 'dislike', vote_path(type: 'answer', id: @answer.id, vote: 'dislike'), method: :post, class: 'btn btn-danger btn-xs'
 		.col-xs-11
 			= @answer.content
 			.text-right

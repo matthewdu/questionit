@@ -8,9 +8,14 @@ h3 My Answers
 ul.list-group
 - @user.answers.each do |answer|
 	li.list-group-item
-		/span.badge = answer.points
-		h4 => link_to answer.title, answer_path(answer)
+		span.badge = answer.weighted_score
+		h4
+			= link_to answer.title, answer_path(answer)
+			|  (
+			= pluralize(answer.questions.count, 'question')
+			| )
 		= answer.content
+		|  
 		- if current_user.admin? || current_user?(@user)
 			br
 			.btn-group

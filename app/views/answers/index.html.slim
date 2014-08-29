@@ -7,8 +7,12 @@ h1.center Answers
 ul.list-group
 	- @answers.each do |answer|
 		li.list-group-item
-			/span.badge = answer.points
-			h4 => link_to answer.title, answer_path(answer)
+			span.badge = answer.weighted_score
+			h4
+				= link_to answer.title, answer_path(answer)
+				|  (
+				= pluralize(answer.questions.count, 'question')
+				| )
 			= answer.content
 			- if signed_in? && current_user.admin?
 				br

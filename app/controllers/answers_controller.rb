@@ -32,7 +32,7 @@ class AnswersController < ApplicationController
 	end
 
 	def index
-		@answers = Answer.paginate(page: params[:page])
+		@answers = Answer.paginate(page: params[:page]).order(updated_at: :desc)
 	end
 
 	def show

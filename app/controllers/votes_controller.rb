@@ -14,6 +14,7 @@ class VotesController < ApplicationController
 				current_user.dislikes Question.find(params[:id])
 			end
 		end
+		redirect_to answer_path(id: params[:id])
 	end
 
 	def unvote
